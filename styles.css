@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+/* Container for Centering Content */
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  max-width: 400px;
+  width: 90%;
+  border: 4px solid #ff6f61; /* Game-like border */
+  position: relative;
+}
+
+/* Game-like border effect */
+.container::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid #ff6f61;
+  border-radius: 30px;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Game Title */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Target Color Box */
+.color-box {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  border: 4px solid #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Color Options Container */
+.color-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 20px auto;
+}
+
+/* Color Buttons */
+.color-options button {
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 50%; /* Make buttons round */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-options button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Status Message */
+#gameStatus {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #fff;
+}
+
+/* Score Display */
+#score {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* New Game Button */
+#newGameButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #ff6f61;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#newGameButton:hover {
+  background: #ff3b2f;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .color-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .color-box {
+    width: 120px;
+    height: 120px;
+  }
+
+  .color-options button {
+    width: 70px;
+    height: 70px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #gameStatus, #score {
+    font-size: 1rem;
+  }
+}
